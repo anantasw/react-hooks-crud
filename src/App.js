@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import Table from './components/table/table';
+
+import Table from './components/table/Table';
+import AddUserForm from './components/form/AddUserForm';
 
 const App = () => {
   const usersState = [
@@ -10,15 +12,21 @@ const App = () => {
 
   const [users, setUsers] = useState(usersState);
 
+  const addUser = (user) => {
+    user.id = users.length + 1;
+    setUsers([...users, user]);
+  }
+
   return (
     <div className="container">
       <h1>React Hooks CRUD</h1>
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add User</h2>
+          <AddUserForm addUser={addUser} />
         </div>
         <div className="flex-large">
-          <h2>View User</h2>
+          <h2>User Data</h2>
           <Table users={users} />
         </div>
       </div>
