@@ -61,7 +61,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>React Hooks CRUD</h1>
+      <h1>Simple CRUD</h1>
       <div className="flex-row">
         <div className="flex-large">
           {formUser}
