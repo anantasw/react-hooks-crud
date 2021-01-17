@@ -1,4 +1,4 @@
-const Table = ({ users }) => {
+const DataTable = ({ users, editUser, deleteUser }) => {
     return (
         <table>
             <thead>
@@ -15,8 +15,14 @@ const Table = ({ users }) => {
                             <td>{user.firstName}</td>
                             <td>{user.lastName}</td>
                             <td>
-                                <button className="button muted-button">Edit</button>
-                                <button className="button muted-button">Delete</button>
+                                <button 
+                                    className="button muted-button"
+                                    onClick={() => editUser(user)}
+                                >Edit</button>
+                                <button 
+                                    className="button muted-button"
+                                    onClick={() => deleteUser(user.id)}
+                                >Delete</button>
                             </td>
                         </tr>
                     ))
@@ -30,4 +36,4 @@ const Table = ({ users }) => {
     );
 }
 
-export default Table;
+export default DataTable;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const AddUserForm = (props) => {
-    const initFormState = { id: null, firstName: '', lastName: '' }
+    const initFormState = { id: null, firstName: '', lastName: '' };
     const [user, setUser] = useState(initFormState);
 
     const inputChangeHandler = (event) => {
@@ -14,7 +14,7 @@ const AddUserForm = (props) => {
 
     const submitFormHandler = (event) => {
         event.preventDefault();
-        if (!user.firstName || !user.lastName) return;
+        if (!user.firstName || !user.lastName) return alert('Please fill in the forms');
 
         props.addUser(user);
         setUser(initFormState);
